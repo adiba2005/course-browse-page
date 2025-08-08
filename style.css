@@ -1,0 +1,410 @@
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+.font-hand {
+  font-family: 'Patrick Hand', cursive;
+}
+
+section.hero-gradient {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    to right,
+    #7c3aed 0%,
+    #6a3ed3 5%,
+    #4c1d95 15%,
+    #4c1d95 85%,
+    #6a3ed3 95%,
+    #7c3aed 100%
+  );
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  text-align: center;
+  color: white;
+}
+.btn-gradient {
+  background: linear-gradient(45deg, #d53f8c, #805ad5);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+.btn-gradient:hover {
+  background: linear-gradient(45deg, #b83280, #6b46c1);
+}
+
+/* Age selection small buttons in one line */
+.age-selection-container {
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 1rem;
+  text-align: center;
+}
+.age-button {
+  background: white;
+  border: 2px solid;
+  border-radius: 8px;
+  padding: 8px 10px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  color: #374151;
+  display: inline-block;
+  margin-right: 8px;
+  min-width: 60px;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+.age-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.age-number {
+  font-size: 12px;
+  font-weight: 700;
+  display: block;
+}
+.age-label {
+  font-size: 10px;
+  color: #6B7280;
+}
+#webinarGrid,
+#newLauriciesGrid,
+#featuredCoursesGrid {
+  display: flex !important;
+  overflow-x: auto;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+}
+
+/* Horizontal scrolling courses */
+.course-scroll {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+}
+
+/* Courses Section - white bg and horizontal scroll */
+main.flex-grow {
+  background-color: white !important;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 3rem;
+}
+main h2 {
+  color: #111827;
+  margin-bottom: 1.5rem;
+}
+
+/* --- BROWSE COURSES & NEW LAUNCHES SAME STYLE --- */
+#courseGrid,
+#newLauriciesGrid {
+  display: flex !important;
+  overflow-x: auto;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+}
+
+/* Cards */
+#courseGrid > article,
+#newLauriciesGrid > article {
+  flex: 0 0 17rem;
+  scroll-snap-align: start;
+  background-color: #f9fafb;
+  color: #111827;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+              0 4px 6px -2px rgb(0 0 0 / 0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+#courseGrid img,
+#newLauriciesGrid img {
+  height: 11rem;
+  object-fit: cover;
+  width: 100%;
+}
+/* Rating badge */
+.rating-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #facc15;
+  color: #111827;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  white-space: nowrap;
+  user-select: none;
+  z-index: 10;
+}
+#courseGrid article h3,
+#newLauriciesGrid article h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.25rem;
+  line-height: 1.2;
+}
+/* Meta row */
+.course-meta-row {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: #4b5563;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+.course-meta-row > div.lang {
+  background-color: #a578f3; /* purple */
+}
+
+.course-meta-row > div.level {
+  background-color: #f38fb2; /* pink */
+}
+
+.course-meta-row > div.classes {
+  background-color: #f3a578; /* peach/orange */
+}
+/* Info row */
+.course-info-row {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.75rem;
+  color: #4b5563;
+  font-weight: 600;
+  margin-top: auto;
+  justify-content: center;
+}
+.info-block {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.info-block .value {
+  color: #111827;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+/* --- TOP TEACHERS SECTION --- */
+.teachers-container {
+  display: flex;
+  gap: 16px;
+  margin-top: 60px;
+  padding: 0 20px 15px;
+  scroll-snap-type: x mandatory;
+  position: relative;
+}
+.teachers-container::-webkit-scrollbar {
+  height: 8px;
+}
+.teachers-container::-webkit-scrollbar-thumb {
+  background-color: #c4b5fd;
+  border-radius: 4px;
+}
+.teacher-card {
+  background: linear-gradient(145deg, #ffffff, #f3f0ff);
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  width: 200px;
+  padding: 40px 16px 16px;
+  text-align: center;
+  scroll-snap-align: start;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  flex-shrink: 0;
+}
+.teacher-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.15);
+}
+.teacher-card img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 4px solid #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  background-color: white;
+}
+.teacher-name {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 4px;
+  color: #3b3b3b;
+}
+.teacher-info {
+  font-size: 0.75rem;
+  color: #777;
+  margin-bottom: 3px;
+}
+.teacher-subject {
+  background: #e9d5ff;
+  color: #5b21b6;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  display: inline-block;
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+
+.popular-categories {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.popular-categories h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.25rem;
+}
+
+.popular-categories .subtitle {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin-bottom: 4rem;
+}
+
+.categories-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+}
+
+.category-card {
+  flex: 0 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  padding: 1rem 1rem 7rem; /* more top padding for image space */
+  text-align: left;
+  width: 220px; /* wider box */
+  height: 110px; /* taller box */
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.category-card img {
+  width: 170px;
+  height: 170px;
+  object-fit: contain;
+  position: absolute;
+  top: -40px; /* half above card */
+  left: 70%;
+  transform: translateX(-50%);
+  transition: transform 0.3s ease;
+}
+
+.category-card span {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+  margin-top: 50px; /* spacing for popped image */
+  display: inline-block;
+}
+
+.category-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.category-card:hover img {
+  transform: translateX(-50%) scale(1.1); /* pop on hover */
+}
+
+.category-card.active {
+  background: linear-gradient(135deg, #ff7a18, #ff5a00);
+  color: #fff;
+}
+
+.category-card.active span {
+  color: #fff;
+}
+
+.filter-time {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: #f9fdfc; /* light background */
+}
+
+.filter-time h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  color: #111827;
+}
+
+.filter-time p {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+.time-cards {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.time-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  min-width: 180px;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.time-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.3rem;
+}
+
+.time-card span {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.time-card .icon {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  font-size: 1.4rem;
+  opacity: 0.8;
+}
+
+.time-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
