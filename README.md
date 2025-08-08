@@ -30,3 +30,14 @@ Setup & Usage
 
    git clone https://github.com/adiba2005/course-browse-page.git
    cd course-browse-page
+
+Author & Submission Details
+Author: Adiba Siddiqui
+Date of Submission: 9 August 2025
+
+
+
+
+
+
+
