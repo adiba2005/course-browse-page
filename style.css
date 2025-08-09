@@ -73,6 +73,7 @@ section.hero-gradient {
   font-size: 10px;
   color: #6B7280;
 }
+
 #webinarGrid,
 #newLauriciesGrid,
 #featuredCoursesGrid {
@@ -104,7 +105,7 @@ main h2 {
   margin-bottom: 1.5rem;
 }
 
-/* --- BROWSE COURSES & NEW LAUNCHES SAME STYLE --- */
+#webinarGrid,
 #courseGrid,
 #newLauriciesGrid {
   display: flex !important;
@@ -115,6 +116,7 @@ main h2 {
 }
 
 /* Cards */
+#webinarGrid > article,
 #courseGrid > article,
 #newLauriciesGrid > article {
   flex: 0 0 17rem;
@@ -151,6 +153,7 @@ main h2 {
   user-select: none;
   z-index: 10;
 }
+#webinarGrid article h3,
 #courseGrid article h3,
 #newLauriciesGrid article h3 {
   font-size: 1rem;
@@ -196,11 +199,6 @@ main h2 {
   flex-direction: column;
   gap: 0.25rem;
 }
-.info-block .value {
-  color: #111827;
-  font-weight: 700;
-  font-size: 0.875rem;
-}
 
 /* --- TOP TEACHERS SECTION --- */
 .teachers-container {
@@ -210,7 +208,10 @@ main h2 {
   padding: 0 20px 15px;
   scroll-snap-type: x mandatory;
   position: relative;
+  flex-wrap: wrap; 
+  justify-content: center;
 }
+
 .teachers-container::-webkit-scrollbar {
   height: 8px;
 }
@@ -229,6 +230,7 @@ main h2 {
   position: relative;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   flex-shrink: 0;
+  min-width: 160px; /* added minimum width */
 }
 .teacher-card:hover {
   transform: translateY(-4px);
@@ -269,7 +271,6 @@ main h2 {
   font-weight: 500;
 }
 
-
 .popular-categories {
   text-align: center;
   padding: 2rem 1rem;
@@ -285,7 +286,7 @@ main h2 {
 .popular-categories .subtitle {
   color: #6b7280;
   font-size: 0.95rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 .categories-container {
@@ -300,10 +301,10 @@ main h2 {
   flex: 0 0 auto;
   background: #fff;
   border-radius: 16px;
-  padding: 1rem 1rem 7rem; /* more top padding for image space */
+  padding: 1rem 1rem 7rem;
   text-align: left;
-  width: 220px; /* wider box */
-  height: 110px; /* taller box */
+  width: 220px;
+  height: 110px;
   position: relative;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -315,7 +316,7 @@ main h2 {
   height: 170px;
   object-fit: contain;
   position: absolute;
-  top: -40px; /* half above card */
+  top: -40px;
   left: 70%;
   transform: translateX(-50%);
   transition: transform 0.3s ease;
@@ -335,7 +336,7 @@ main h2 {
 }
 
 .category-card:hover img {
-  transform: translateX(-50%) scale(1.1); /* pop on hover */
+  transform: translateX(-50%) scale(1.1);
 }
 
 .category-card.active {
@@ -345,6 +346,61 @@ main h2 {
 
 .category-card.active span {
   color: #fff;
+}
+
+
+@media (max-width: 1024px) {
+  .categories-container {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+}
+
+/* Mobile Large */
+@media (max-width: 768px) {
+  .category-card {
+    width: 180px;
+    height: 95px;
+    padding: 1rem 1rem 6rem;
+  }
+
+  .category-card img {
+    width: 140px;
+    height: 140px;
+    top: -35px;
+    left: 65%;
+  }
+
+  .category-card span {
+    font-size: 0.9rem;
+    margin-top: 40px;
+  }
+}
+
+/* Mobile Small */
+@media (max-width: 480px) {
+  .categories-container {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .category-card {
+    width: 150px;
+    height: 85px;
+    padding: 0.8rem 0.8rem 5rem;
+  }
+
+  .category-card img {
+    width: 110px;
+    height: 110px;
+    top: -30px;
+    left: 60%;
+  }
+
+  .category-card span {
+    font-size: 0.85rem;
+    margin-top: 35px;
+  }
 }
 
 .filter-time {
@@ -407,4 +463,226 @@ main h2 {
 .time-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+/* ===== RESPONSIVE PARTS ===== */
+@media (max-width: 768px) {
+  /* Nav padding smaller */
+  nav {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  /* Hero section padding smaller */
+  section.hero-gradient {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  section.hero-gradient h1 {
+    font-size: 2.5rem;
+  }
+  section.hero-gradient h2 {
+    font-size: 1.5rem;
+  }
+  /* Hero images hidden on small */
+  section.hero-gradient img {
+    display: none !important;
+  }
+  /* Form input full width */
+  section.hero-gradient form {
+    flex-direction: column;
+  }
+  section.hero-gradient input[type="search"] {
+    width: 100% !important;
+    margin-bottom: 1rem;
+  }
+  section.hero-gradient button {
+    width: 100%;
+  }
+
+  /* Age buttons container padding */
+  .age-selection-container {
+    padding: 0.5rem;
+  }
+
+  /* Age buttons smaller font, smaller spacing */
+  .age-button {
+    font-size: 10px;
+    padding: 6px 8px;
+    min-width: 50px;
+    margin-right: 6px;
+  }
+  .age-number {
+    font-size: 10px;
+  }
+  .age-label {
+    font-size: 8px;
+  }
+
+  /* New Lauricies & courseGrid horizontal scroll */
+  #courseGrid, #newLauriciesGrid {
+    gap: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  #courseGrid > article,
+  #newLauriciesGrid > article {
+    flex: 0 0 14rem;
+  }
+
+  /* Teachers container scroll horizontally */
+  .teachers-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .teacher-card {
+    width: 160px;
+    padding: 30px 12px 12px;
+  }
+  .teacher-card img {
+    width: 60px;
+    height: 60px;
+    top: -30px;
+  }
+  .teacher-name {
+    font-size: 0.9rem;
+  }
+  .teacher-info {
+    font-size: 0.65rem;
+  }
+  .teacher-subject {
+    font-size: 0.65rem;
+    padding: 3px 6px;
+  }
+
+  /* Popular categories container scroll horizontal */
+  .categories-container {
+    justify-content: flex-start;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    gap: 1rem;
+    overflow-x: auto;
+  }
+  .category-card {
+    width: 160px;
+    height: 90px;
+    padding-bottom: 5rem;
+  }
+  .category-card img {
+    width: 120px;
+    height: 120px;
+    top: -30px;
+    left: 60%;
+  }
+  .category-card span {
+    font-size: 0.9rem;
+    margin-top: 40px;
+  }
+
+  /* Filter time section */
+  .filter-time {
+    padding: 2rem 0.5rem;
+  }
+  .time-cards {
+    gap: 0.5rem;
+  }
+  .time-card {
+    min-width: 140px;
+    padding: 0.75rem 1rem;
+  }
+  .time-card h3 {
+    font-size: 0.9rem;
+  }
+  .time-card span {
+    font-size: 0.8rem;
+  }
+  .time-card .icon {
+    font-size: 1.2rem;
+    right: 8px;
+    bottom: 8px;
+  }
+}
+
+@media (max-width: 375px) {
+  /* Even smaller fonts for hero */
+  section.hero-gradient h1 {
+    font-size: 2rem;
+  }
+  section.hero-gradient h2 {
+    font-size: 1.25rem;
+  }
+
+  /* Further reduce age button size */
+  .age-button {
+    font-size: 9px;
+    padding: 5px 7px;
+    min-width: 45px;
+    margin-right: 4px;
+  }
+  .age-number {
+    font-size: 9px;
+  }
+  .age-label {
+    font-size: 7px;
+  }
+
+  /* Cards smaller */
+  #courseGrid > article,
+  #newLauriciesGrid > article {
+    flex: 0 0 12rem;
+  }
+
+  /* Teachers card even smaller */
+  .teacher-card {
+    width: 140px;
+    padding: 25px 10px 10px;
+  }
+  .teacher-card img {
+    width: 50px;
+    height: 50px;
+    top: -25px;
+  }
+  .teacher-name {
+    font-size: 0.8rem;
+  }
+  .teacher-info {
+    font-size: 0.6rem;
+  }
+  .teacher-subject {
+    font-size: 0.6rem;
+    padding: 2px 5px;
+  }
+
+  /* Categories smaller */
+  .category-card {
+    width: 140px;
+    height: 80px;
+    padding-bottom: 4rem;
+  }
+  .category-card img {
+    width: 100px;
+    height: 100px;
+    top: -25px;
+    left: 60%;
+  }
+  .category-card span {
+    font-size: 0.85rem;
+    margin-top: 35px;
+  }
+
+  /* Filter time smaller */
+  .time-card {
+    min-width: 120px;
+    padding: 0.6rem 0.8rem;
+  }
+  .time-card h3 {
+    font-size: 0.85rem;
+  }
+  .time-card span {
+    font-size: 0.75rem;
+  }
+  .time-card .icon {
+    font-size: 1rem;
+    right: 6px;
+    bottom: 6px;
+  }
 }
